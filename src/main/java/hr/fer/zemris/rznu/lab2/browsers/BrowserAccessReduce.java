@@ -20,5 +20,12 @@ public class BrowserAccessReduce extends MapReduceBase implements Reducer<Text, 
                        OutputCollector<Text, IntWritable> textIntWritableOutputCollector,
                        Reporter reporter) throws IOException {
 
+        int counter = 0;
+        while(intWritableIterator.hasNext()){
+            intWritableIterator.next();
+            counter++;
+        }
+
+        textIntWritableOutputCollector.collect(text, new IntWritable(counter));
     }
 }

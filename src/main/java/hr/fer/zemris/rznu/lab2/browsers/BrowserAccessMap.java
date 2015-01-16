@@ -19,6 +19,8 @@ public class BrowserAccessMap extends MapReduceBase implements Mapper<LongWritab
                     Text text,
                     OutputCollector<Text, IntWritable> textIntWritableOutputCollector,
                     Reporter reporter) throws IOException {
-
+        String[] parts = text.toString().split(" ");
+        String browser = parts[1];
+        textIntWritableOutputCollector.collect(new Text(browser), new IntWritable(1));
     }
 }

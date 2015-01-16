@@ -21,5 +21,9 @@ public class WebAccessMap extends MapReduceBase implements Mapper<LongWritable, 
                     OutputCollector<Text, IntWritable> textIntWritableOutputCollector,
                     Reporter reporter) throws IOException {
 
+        String[] parts = text.toString().split(" ");
+        String url = parts[0];
+
+        textIntWritableOutputCollector.collect(new Text(url), new IntWritable(1));
     }
 }
