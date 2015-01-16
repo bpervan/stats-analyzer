@@ -5,6 +5,6 @@ package hr.fer.zemris.rznu.lab2;
  */
 public class StatsAnalyzer {
     public static void main(String[] args){
-        
+
     }
 }
